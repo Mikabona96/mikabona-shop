@@ -1,16 +1,17 @@
 import React from 'react'
-import { useFetchSneakers } from '../../hooks/useFetchSneakers'
+import { useFetchJeans } from '../../hooks/useFetchJeans'
 import MediaCard from './card'
 import { Sneaker } from '../../types'
-const Sneakers = () => {
-  const {sneakers} = useFetchSneakers()
+
+const Jeans = () => {
+  const {jeans} = useFetchJeans()
 
   return (
     <div className='flex justify-evenly mx-4 mb-[13rem] h-screen flex-wrap'>
       {
-        sneakers.map((sneaker: Sneaker) => {
+        jeans?.map((jean: Sneaker) => {
           return (
-            <MediaCard key={sneaker.id} {...sneaker} />
+            <MediaCard key={jean.id} {...jean} />
           )
         })
       }
@@ -18,4 +19,4 @@ const Sneakers = () => {
   )
 }
 
-export default Sneakers
+export default Jeans

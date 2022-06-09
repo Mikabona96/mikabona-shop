@@ -1,5 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom';
+import Hats from '../Hats/Hats';
+import Jeans from '../Jeans/Jeans';
 import Sneakers from '../Sneakers/Sneakers';
 
 export const Category = () => {
@@ -11,7 +13,9 @@ export const Category = () => {
         case 'sneakers':
             return <Sneakers />
         case 'hats':
-            return <Sneakers />
+            return <Hats />
+        case 'jeans':
+            return <Jeans />
     }
 
   return (

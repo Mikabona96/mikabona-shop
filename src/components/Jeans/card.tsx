@@ -12,14 +12,12 @@ type PropTypes = {
 }
 
 const MediaCard: React.FC<PropTypes> = (props) => {
-  const {brand, model, sizes, images, price} = props;
+  const {brand, model, images, price} = props;
   const navigate = useNavigate();
   const location = useLocation()
 
-
   return (
-    <div 
-    className='relative h-[35rem] mt-4'
+    <div className='relative h-[35rem] mt-4'
     onClick={() => {
       navigate(`${location.pathname}/${props.id}`)
     }}>
@@ -29,6 +27,7 @@ const MediaCard: React.FC<PropTypes> = (props) => {
       <div className='absolute bottom-3 w-[100%]'>
         <h3 className='text-lg'>{brand}</h3>
         <h2 className="mt-2">{model}</h2>
+        
         <div className='flex justify-between w-[100%] mt-2'>
           <h1 className='text-2xl'>{price}$</h1>
           <div className='border-2 border-black px-2 pb-1 cursor-pointer hover:bg-black hover:text-white'>Add to Cart</div>
