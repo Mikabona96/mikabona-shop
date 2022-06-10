@@ -1,10 +1,14 @@
 import { atom } from "recoil"
+import {User} from '../firebase/index'
 
-export const userState = atom({
+type InitialAtopType = {
+    key: string
+    default: User | null
+}
+
+const initialAtomObject: InitialAtopType = {
     key: "userState",
-    default: {
-        displayName: '',
-        email: '',
-        photo: ''
-    }
-})
+    default: null
+}
+
+export const userState = atom(initialAtomObject)
